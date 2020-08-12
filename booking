@@ -1,0 +1,13 @@
+*** Settings ***
+Library  SeleniumLibrary
+Suite Teardown  Close All Browsers
+
+
+*** Variables ***
+${URL}          http://blazedemo.com/
+${BROWSER}      Chrome
+
+*** Test Cases ***
+The user can search for flights
+    Open browser    ${URL}   ${BROWSER}
+    Sleep	10s
