@@ -1,0 +1,22 @@
+*** Settings ***
+Library     SSHLibrary     45seconds
+Suite Teardown     Close All Connections
+
+*** Variables ***
+${host}     appqa-4-13
+${user}     admin
+${pwd}      injab0xb
+
+*** Keywords ***
+
+*** Test Cases ***
+reboot
+  [Tags]    ssh-command
+  Open Connections  ${host}
+  Login             ${user} ${pwd}
+  Sleep   5$
+  Write   enable
+  Write   show version
+  Sleep   5s
+  Write   reload
+  Write   Y
