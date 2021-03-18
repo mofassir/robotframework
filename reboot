@@ -8,10 +8,7 @@ ${user}     admin
 ${pwd}      injab0xbzxzxzx
 
 *** Keywords ***
-
-*** Test Cases ***
-reboot
-  [Tags]    ssh-command
+ Repeat reboot
   Open Connections  ${host}
   Login             ${user} ${pwd}
   Sleep   5$
@@ -20,3 +17,10 @@ reboot
   Sleep   5s
   Write   reload
   Write   Y
+  
+  *** Test Cases ***
+ 
+  Repeat
+  [Tags]    ssh-command
+  :FOR    ${i}    IN RANGE    10
+  Repeat reboot
