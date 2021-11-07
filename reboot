@@ -1,24 +1,26 @@
 *** Settings ***
+Library            SSHLibrary
 Library     SSHLibrary     45seconds
 Suite Teardown     Close All Connections
 
 *** Variables ***
-${host}     xxxxxxx
-${user}     root
-${pwd}      xxxxxxx
+${host}     appqa-4-01
+${user}     admin
+${pwd}      injab0xn
 
 *** Keywords ***
  Repeat reboot
-  Open Connections  ${host}
+  Open Connection  ${host}
   Login             ${user} ${pwd}
-  Sleep   5$
+  Sleep   5s
   Write   enable
   Write   show version
   Sleep   5s
   Write   reload
   Write   Y
-  
-  *** Test Cases ***
-  Reboot machine
-  :FOR    ${i}    IN RANGE    10
+ 
+*** Test Cases ***
+ Repeating Reboots
+  FOR    ${i}    IN RANGE    10
   Repeat reboot
+  END
