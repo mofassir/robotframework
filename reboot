@@ -3,9 +3,9 @@ Library     SSHLibrary     45seconds
 Suite Teardown     Close All Connections
 
 *** Variables ***
-${host}     appqa-4-13
-${user}     admin
-${pwd}      injab0xbzxzxzx
+${host}     xxxxxxx
+${user}     root
+${pwd}      xxxxxxx
 
 *** Keywords ***
  Repeat reboot
@@ -19,8 +19,6 @@ ${pwd}      injab0xbzxzxzx
   Write   Y
   
   *** Test Cases ***
- 
-  Repeat
-  [Tags]    ssh-command
+  Reboot machine
   :FOR    ${i}    IN RANGE    10
   Repeat reboot
