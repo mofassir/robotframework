@@ -1,1 +1,1 @@
-Sripts written to reboot devices multiple times using robotframework.
+Sripts written to execute commands on remote machine using robotframework ssh libarary.
