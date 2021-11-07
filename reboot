@@ -4,9 +4,9 @@ Library     SSHLibrary     45seconds
 Suite Teardown     Close All Connections
 
 *** Variables ***
-${host}     appqa-4-01
-${user}     admin
-${pwd}      injab0xn
+${host}     xxxxxxxxxx
+${user}     root
+${pwd}      xxxxxxxxxx
 
 *** Keywords ***
  Repeat reboot
