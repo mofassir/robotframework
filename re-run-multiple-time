@@ -1,0 +1,25 @@
+*** Settings ***
+Library            SSHLibrary
+Library     SSHLibrary     45seconds
+Suite Teardown     Close All Connections
+
+*** Variables ***
+${host}     xxxxxxxxxx
+${user}     xxxxxxxxx
+${pwd}      xxxxxxxxx
+
+*** Keywords ***
+ Repeat reboot
+  Open Connection  ${host}
+  Login            ${user}	${pwd}
+  Sleep   2s
+  Write   enable
+  Write   show interfaces
+  Sleep   5s
+  Close All Connections
+ 
+*** Test Cases ***
+ Repeating Reboots
+  FOR    ${i}    IN RANGE    10
+  Repeat reboot
+  END
